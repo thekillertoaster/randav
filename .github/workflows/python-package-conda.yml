@@ -20,4 +20,4 @@ jobs:
         echo $CONDA/bin >> $GITHUB_PATH
     - name: Test with unittest
       run: |
-        unittest discover tests
+        conda -m unittest discover tests
