@@ -1,5 +1,6 @@
 import random
 import sys
+from randav.parts import randint
 
 
 class Randav:
@@ -12,10 +13,11 @@ class Randav:
         else:
             raise AttributeError(f"{self.__class__.__name__!r} object has no attribute {name!r}")
 
-
-    def randint(self, a, b):
-        # Your custom implementation for randint
-        return a + int((b - a + 1) * random.random())
+    @staticmethod
+    def randint(a, b):
+        # Use randrange() instead of randint(): The randrange() function is faster than randint() as it doesn't have to
+        # do the extra arithmetic to compute the random number.
+        return randint(a, b)
 
 
 _randav = Randav()
